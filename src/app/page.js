@@ -1,22 +1,18 @@
 "use client";
 
 import { useState } from "react";
-import Footer from "@/components/FooterMain";
-import Header from "@/components/Header";
-import NameForm from "@/components/Name-Form";
-import FormsData from "@/components/FormsData";
+
+import Firstpage from "./pages/Firstpage";
+import SecondPage from "./pages/Secondpage";
+import Thirdpage from "./pages/Thirdpage";
 
 export default function Home() {
-  const [forms, setForms] = useState(FormsData);
+  const [page, setPage] = useState (1)
   return (
-    <div className="w-screen h-screen flex justify-center items-center bg-[#F4F4F4]">
-      <div className="w-[480px] h-[655px] bg-[#FFFFFF] rounded-[8px] p-8 flex justify-between flex-col">
-        <div className="w-full h-[385px] flex flex-col gap-4">
-       <Header />
-         <NameForm forms={forms} setForms={setForms} />
-        </div>
-       <Footer forms={forms} setForms={setForms}/>
-      </div>
-    </div>
+    <>
+    {page === 1 &&(<Firstpage setPage={setPage} page={page}/>)}
+    {page === 2 &&(<SecondPage setPage={setPage} page={page}/>)}
+    {page == 3 &&(<Thirdpage setPage={setPage} page={page}/> )}
+    </>
   );
 }

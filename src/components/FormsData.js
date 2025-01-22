@@ -5,6 +5,7 @@ const FormsData = [
       type: "text",
       value: "",
       color: "[#CBD5E1]",
+      error : 'def',
       errorText: "Нэрээ оруулна уу",
     },
     {
@@ -13,6 +14,7 @@ const FormsData = [
       type: "text",
       value: "",
       color: "[#CBD5E1]",
+      error : 'def',
       errorText: "Овгоо оруулна уу.",
     },
     {
@@ -21,6 +23,7 @@ const FormsData = [
       type: "text",
       value: "",
       color: "[#CBD5E1]",
+      error : 'def',
       errorText: "Хэрэглэгчийн нэрээ оруулна уу",
     },
   ]
