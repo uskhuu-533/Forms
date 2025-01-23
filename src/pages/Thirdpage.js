@@ -5,6 +5,8 @@ import Header from "@/components/Header";
 import NameForm from "@/components/Name-Form";
 import DateProlife from "@/components/DateProlife";
 import Footer from "@/components/Footer";
+
+
  const Thirdpage = (props) => {
     const {setPage, page} = props
     const [forms, setForms] = useState(DateProlife);

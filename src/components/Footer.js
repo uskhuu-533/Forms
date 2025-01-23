@@ -64,7 +64,7 @@ const Footer = (props) => {
             return key
           }
         }
-          if(key.label == "Password"){
+         else if(key.label == "Password"){
             setPass(key.value)
             if(key.value.length === 0) {
               return{
@@ -78,13 +78,15 @@ const Footer = (props) => {
                 error:"error",
                 errorText:"6 оронтой тоо оруулна уу"
               }
-            }else if(!passwordRegex(key.value)){
-              return{
-                ...key,
-                error:"error",
-                errorText: "Weak password"
-              }
-            }else{
+            }
+            // else if(!passwordRegex(key.value)){
+            //   return{
+            //     ...key,
+            //     error:"error",
+            //     errorText: "Weak password"
+            //   }
+            // }
+            else{
               return key
             }
           }else if(key.label== "Confirm password") {
@@ -116,16 +118,26 @@ const Footer = (props) => {
                 error:"error",
                 errorText:"Та 18 ба түүнээс дээш настай байх ёстой."
               }
-            }else{
+            }
+            else{
               return key
             }
-          }
+          }else if(key.type == "file"){
+            if(key.value.length === 0){
+             return{ 
+              ...key,
+              error:"error",
+            }
+            }else{
+              return key
+            }}
           else{
             return key
           }
         
         
     });
+  
    setForms(list);
    nextPage()
 
@@ -150,13 +162,16 @@ const birthDate = (date)=>{
   };
 
   const nextPage = () => {
-    if (filterForm.length === 0 && filterForm1.length === 0) {
+
+    if (filterForm.length === 0 
+      && filterForm1.length === 0
+    ) {
       setPage(page + 1);
       
     }
   }
 
-  
+  console.log(forms)
   return (
     <div className="flex justify-between w-full gap-3">
       {page === 2 && (
