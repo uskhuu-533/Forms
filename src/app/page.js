@@ -11,7 +11,7 @@ export default function Home() {
   const [page, setPage] = useState (1)
   return (
     <>
-    {page === 1 &&(<Firstpage setPage={setPage} page={page}/>)}
+    {page === 1 &&(<Firstpage setPage={setPage}  page={page}/>)}
     {page === 2 &&(<SecondPage setPage={setPage} page={page}/>)}
     {page == 3 &&(<Thirdpage setPage={setPage} page={page}/> )}
     {page == 4 && (<FourthPage/>)}
